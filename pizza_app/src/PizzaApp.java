@@ -18,7 +18,7 @@ public class PizzaApp extends JFrame {
     // Menu Arrays
     private String[] pizzaTypes = {"Cheese", "Pepperoni", "Vegetarian", "BBQ Chicken"};
     private String[] sizes = {"Small", "Medium", "Large", "X-Large"};
-    private String[] toppings = {"Extra Cheese", "Mushrooms", "Peppers", "Onions", "Olives"};
+    private String[] toppings = {"Extra Cheese", "Mushrooms", "Peppers", "Onions", "Olives", "Pineapples"};
 
     // Main method to initialize gui and provide functionality
     public PizzaApp() {
@@ -87,7 +87,7 @@ public class PizzaApp extends JFrame {
         add(priceLabel, grid);
     }
 
-    // Item Listener Class
+    // Item Listener Class for check boxes
     private class ToppingsItemListener implements ItemListener {
         @Override
         public void itemStateChanged(ItemEvent e) {
@@ -141,7 +141,7 @@ public class PizzaApp extends JFrame {
                 }
             }
 
-            // Deal for three toppings
+            // Three toppings discount
             if (numToppings > 0) {
                 if (numToppings <= 2) {
                     price += 0.50 * numToppings;
@@ -161,8 +161,3 @@ public class PizzaApp extends JFrame {
         });
     }
 }
-
-//Creativity:
-//- Food items in array
-//- Event listener to black out the radio boxes
-// Used Grid Bag layout to create a simple veritcal layout that supports multiple window sizes
