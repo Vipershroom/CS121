@@ -1,5 +1,6 @@
 public class Main {
     public static void main(String[] args) {
+        // Testing area
         Item tissue = new Item("Tissue", 3.0);
 
 

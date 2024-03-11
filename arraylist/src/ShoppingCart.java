@@ -27,6 +27,7 @@ class ShoppingCart {
     }
 
     public double getTotalPrice() {
+        // Convert to a list to use the map method
         List<Double> itemOrderList = ((List<ItemOrder>) itemList).stream().map(ItemOrder::getTotalPrice).toList();
         return itemOrderList.stream().mapToDouble(Double::doubleValue).sum();
 
