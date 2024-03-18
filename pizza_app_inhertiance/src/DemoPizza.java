@@ -1,6 +1,4 @@
 import java.util.Scanner;
-import java.util.HashMap; // import the HashMap class
-
 
 public class DemoPizza {
     public static void main(String[] args) {
