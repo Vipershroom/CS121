@@ -36,18 +36,26 @@ public class DemoPizza {
         // Handle delivery status
         System.out.print("Is the pizza to be delivered? (yes/no): ");
         input = scanner.nextLine();
-        if (input.equalsIgnoreCase("yes")) {
-            System.out.print("Enter delivery address: ");
-            String deliveryAddress = scanner.nextLine();
-
-            // Create deliverypizza object and display to the user
-            DeliveryPizza pizza = new DeliveryPizza(toppings, deliveryAddress, num_toppings);
-            System.out.println("\nPizza Details:\n" + pizza);
-        } else {
-            // Create pizza object and display to the user
-            Pizza pizza = new Pizza(toppings, num_toppings);
-            System.out.println("\nPizza Details:\n" + pizza);
+        while (true) {
+            if (input.equalsIgnoreCase("yes")) {
+                System.out.print("Enter delivery address: ");
+                String deliveryAddress = scanner.nextLine();
+                if (deliveryAddress.equalsIgnoreCase("")) {
+                    System.out.println("Please enter an address");
+                    continue;
+                }
+                // Create deliverypizza object and display to the user
+                DeliveryPizza pizza = new DeliveryPizza(toppings, deliveryAddress, num_toppings);
+                System.out.println("\nPizza Details:\n" + pizza);
+                break;
+            } else {
+                // Create pizza object and display to the user
+                Pizza pizza = new Pizza(toppings, num_toppings);
+                System.out.println("\nPizza Details:\n" + pizza);
+                break;
+            }
         }
+
 
     }
 }
