@@ -17,6 +17,7 @@ public class LinkedList {
     }
 
     public void printList() {
+        // Prints the contents of each node
         Node current = head;
         while (current != null) {
             System.out.print(current.data + " -> ");
@@ -26,6 +27,7 @@ public class LinkedList {
     }
 
     public void add(int data) {
+        // Adds an element to the linked list
         Node new_node = new Node(data);
         if (head == null) {
             head = new_node;
@@ -39,12 +41,14 @@ public class LinkedList {
     }
 
     public void removeAfter(Node node) {
+        // Removes an element after the given node
         if (node != null && node.next != null) {
             node.next = node.next.next;
         }
     }
 
     public LinkedList copy(Node node) {
+        // Copies the linked list
         LinkedList new_list = new LinkedList();
         Node current = node;
         while (current != null) {
@@ -54,6 +58,7 @@ public class LinkedList {
         return new_list;
     }
     public void removeDuplicate(Node node, int key) {
+        // Removes duplicates
         Node current = node;
         Node prev = null;
         while (current != null) {
@@ -70,6 +75,7 @@ public class LinkedList {
         }
     }
     public int max(Node node) {
+        // Finds the max number
         if (node == null) {
             return 0;
         }
@@ -84,6 +90,7 @@ public class LinkedList {
     }
 
     public static void main(String[] args) {
+        // Test cases
         LinkedList list = new LinkedList();
         list.add(1);
         list.add(2);
@@ -104,6 +111,6 @@ public class LinkedList {
         list.printList();
 
         int max = list.max(list.head);
-        System.out.println("Max value in the list: " + max); // Output: Max value in the list: 5
+        System.out.println("Max value in the list: " + max);
     }
 }
