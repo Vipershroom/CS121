@@ -1,7 +1,5 @@
-import java.text.ParseException;
 import java.util.Arrays;
 import java.util.Scanner;
-import java.util.Map;
 public class TestPatient {
 
     public static int[] prompt() {
